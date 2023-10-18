@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+<title>Popular-Sistemas</title>
+<!--/*/ <th:block th:include="fragments/headerparcial2inc :: head"></th:block> /*/-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<!-- Navigation -->
+		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+		<div id="page-wrapper">
+			<br />
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="page-header">Carga c&oacute;digos-Recaudaci&oacute;n</h2>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Informaci&oacute;n de Prestatarios</h3>
+					</div>
+					<div class="panel-body">
+						<div class="col-lg-10">
+							<!-- <div class="row">
+								<form id="frmExcel" method="POST">
+									<div class="col-lg-2">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">C&oacute;digo</label>
+											</div>
+											<div class="col-lg-12">
+												<input data-id="0" type="text" class="form-control required"
+													name="txtCodigo" required="required" maxlength="14"
+													title="Ingrese c&oacute;digo" id="txtCodigo" placeholder="" />
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">Tipo de
+													Operaci&oacute;n</label>
+											</div>
+											<div class="col-lg-12">
+												<select id="cboTipoOperacion" class="form-control required"
+													name="cboTipoOperacion" required="required"
+													title="Seleccione Tipo de operaci&oacute;n"></select> <span
+													class=""></span>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">Fecha de
+													Escritura</label>
+											</div>
+											<div class="col-lg-12">
+												<input type="text" class="form-control required"
+													maxlength="10" name="txtFechaEscritura"
+													id="txtFechaEscritura" required="required"
+													title="Ingrese Fecha" placeholder="" />
+											</div>
+										</div>
+
+									</div>
+									<div class="col-lg-2">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">Prestamo</label>
+											</div>
+											<div class="col-lg-12">
+												<input type="text" class="form-control required"
+													maxlength="10" name="txtPrestamo" id="txtPrestamo"
+													required="required" title="Ingrese Prestamo" placeholder="" />
+											</div>
+										</div>
+
+									</div>
+									<div class="col-lg-3">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">Inversionista</label>
+											</div>
+											<div class="col-lg-12">
+												<select id="cboFondo" class="form-control required"
+													name="cboFondo" required="required"
+													title="Seleccione Inversionista"></select>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="col-lg-2">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">DNI</label>
+											</div>
+											<div class="col-lg-12">
+												<input type="text" class="form-control required"
+													maxlength="8" name="txtDocumento" id="txtDocumento"
+													required="required" title="Ingrese DNI" placeholder="" />
+											</div>
+										</div>
+
+									</div>
+									<div class="col-lg-10">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">CLIENTE</label>
+											</div>
+											<div class="col-lg-12">
+												<input type="text" class="form-control required"
+													maxlength="70" name="txtCliente" id="txtCliente"
+													required="required" title="Ingrese Cliente" placeholder="" />
+											</div>
+										</div>
+
+									</div>
+
+								</form>
+							</div>-->
+							<div class="row">
+								<form id="frmExcelMasivo" method="POST">
+										<input type="hidden" 
+								           th:name="${_csrf.parameterName}" 
+								           th:value="${_csrf.token}" />
+									<div class="form-group">
+										<div class="col-lg-2">
+											<label for="">Seleccion archivo Excel</label>
+										</div>
+										<div class="col-lg-10">
+											<input type="file" name="file" id="filArchivo"
+												required="required" title="Seleccione archivo excel"
+												accept=".xls,.xlsx" class="form-control required" />
+										</div>
+									</div>
+								</form>
+							</div>
+							<!-- <div class="row">
+								<form>
+									<div class="form-group">
+										<div class="col-lg-2">
+											<div class="col-lg-12"></div>
+											<div class="col-lg-12"></div>
+											<label for="">E-Mail destinarios a notificar</label>
+										</div>
+										<div class="col-lg-10">
+											<input type="text" class="form-control" id="txtEmail"
+												disabled="disabled" value=""
+												placeholder="destinatario1@empresa.com;destinatario2@empresa2.com;destinatario3@empresa3.com;" />
+										</div>
+									</div>
+								</form>
+							</div>-->
+						</div>
+						<div class="col-lg-2">
+							<!-- <button type="button" id="btnInsertarOperacion"
+								class="btn btn-primary col-lg-12">Insertar Registro</button>-->
+							<button type="button" class="btn btn-primary col-lg-12"
+								id="btnCargarMasiva">Cargar Masivamente</button>
+							<button type="button" id="btnEnviarReporte"
+								class="btn btn-primary col-lg-12">Enviar Archivos CREP</button>
+							<!-- <button type="button" id="btnModificarDestinatario"
+								class="btn btn-primary col-lg-12">Modificar
+								Destinatario</button>
+							<button type="button" id="btnExportarExcel"
+								class="btn btn-primary col-lg-12">Exportar Excel</button> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Detalle de Codigos Activos (Ultimo Acceso:<span id="spUltEnvio"></span>)</h3>
+					</div>
+					<div class="panel-body">
+						<table id="operacion" class="display" cellspacing="0" width="100%">
+							<thead>
+								<tr>
+									<!-- <th></th>-->
+									<th>C&oacute;digo</th>
+									<!-- <th>Operaci&oacute;n</th>
+									<th>Fecha Escritura</th>
+									<th>Prestamo</th>-->
+
+									<th>Fondo</th>
+									<!-- <th>Observaci&oacute;n</th>
+									<th>DNI</th> -->
+									<th>CLIENTE</th>
+								</tr>
+							</thead>
+							
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /#page-wrapper -->
+	</div>
+	<!-- /#wrapper -->
+	<div id="popModificarDestinatario">
+		<form id="frmAgregarCorreo">
+			<div class="form-group">
+				<button id="btnAgregarItem" type="submit" class="btn btn-primary ">Agregar</button>
+				<input type="email" id="txtCorreoDestinatario"
+					name="txtCorreoDestinatario" value=""
+					title="Ingrese correo v&aacute;lido y diferente"
+					required="required" />
+			</div>
+		</form>
+		<div style="height: 75%; overflow-x: hidden; overflow-y: scroll;">
+			<ul id="listaCorreos" class="list-group action-list-group">
+			</ul>
+		</div>
+
+	</div>
+	<div id="popEliminarOperacion">
+		<div id="divEliminarContenido"></div>
+	</div>
+
+
+
+
+	<!--/*/ <th:block th:include="fragments/footerparcial2inc :: footer"></th:block> /*/-->
+	<!-- SCRIPT PERSONALIZADO -->
+
+
+	<script
+		src="../../static/recursos/js/modulos/teletransfer/registroCobroSAFI.js"
+		th:src="@{../recursos/js/modulos/teletransfer/registroCobroSAFI.js}"></script>
+
+
+
+
+</body>
+</html>

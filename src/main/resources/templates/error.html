@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Popular-Sistemas</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet"
+	media="screen" />
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body onload="Redireccionar()">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="login-panel panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">Popular-Sistemas</h3>
+					</div>
+					<div class="panel-body">
+						<form th:action="@{/logout}" method="post">
+							<label>Estimado Usuario el contenido que esta buscando no
+								existe o no esta disponible, usted sera redireccionado en unos
+								segundos.</label> <a href="#" onclick="document.forms[0].submit();"><i
+								class="fa fa-sign-out fa-fw"></i> Salir</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function Redireccionar() {
+			setTimeout(function() {
+				document.forms[0].submit();
+			}, 12000);
+			setTimeout(function() {
+				alert("Redireccionado a pagina de login...");
+			}, 10000);
+			
+		}
+	</script>
+	
+</body>
+</html>

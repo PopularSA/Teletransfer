@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+<title>Popular-Sistemas</title>
+<!--/*/ <th:block th:include="fragments/headerparcial2inc :: head"></th:block> /*/-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<!-- Navigation -->
+		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+		<div id="page-wrapper">
+			<br />
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="page-header">Generaci&oacute;n c&oacute;digo por
+						&aacute;rea</h2>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Informaci&oacute;n del reporte</h3>
+					</div>
+					<div class="panel-body">
+						<form id="frmRegistraArea">
+							<div class="col-lg-10">
+								<div class="row">
+									<div class="col-lg-3">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">&Aacute;rea </label>
+											</div>
+											<div class="col-lg-12">
+												<select id="cboArea" class="form-control required"
+													name="cboArea" required="required" title="Seleccione Area"></select>
+												<span class=""></span>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-2">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">C&oacute;digo
+													Recaudador</label>
+											</div>
+											<div class="col-lg-12">
+												<input data-id="0" type="text" class="form-control required"
+													name="txtCodigo" required="required" maxlength="4"
+													title="Ingrese c&oacute;digo" id="txtCodigo" placeholder="" />
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-7">
+										<div class="form-group">
+											<div class="col-lg-12">
+												<label class="control-label" for="">Descripci&oacute;n</label>
+											</div>
+											<div class="col-lg-12">
+												<input data-id="0" type="text" class="form-control required"
+													name="txtDescripcion" required="required" maxlength="50"
+													title="Ingrese descripcion" id="txtDescripcion"
+													placeholder="" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-2">
+								<button type="button" id="btnRegistrarArea"
+									class="btn btn-primary col-lg-12">Registrar</button>
+								<button type="button" id="btnlimpiarArea"
+									class="btn btn-primary col-lg-12">Cancelar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Lista de C&oacute;digos</h3>
+					</div>
+					<div class="panel-body">
+						<table id="listaCodigos" class="display" cellspacing="0"
+							width="100%">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Id</th>
+									<th>Area</th>
+									<th>C&oacute;digo</th>
+									<th>Detalle</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+		<!-- /#page-wrapper -->
+	</div>
+	<!-- /#wrapper -->
+	<div id="popEliminarCodigo">
+		<div id="divEliminarContenido"></div>
+	</div>
+	<!--/*/ <th:block th:include="fragments/footerparcial2inc :: footer"></th:block> /*/-->
+	<!-- SCRIPT PERSONALIZADO -->
+	<script
+		src="../../static/recursos/js/modulos/teletransfer/codigoPorArea.js"
+		th:src="@{../recursos/js/modulos/teletransfer/codigoPorArea.js}"></script>
+</body>
+
+</html>

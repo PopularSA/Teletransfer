@@ -1,2 +1,2 @@
-# Teletransfer
-Fuente de teletransfer para formato de carga de códigos activos al banco
+# teletransfer
+Sistema de automatizacion de teletransfer. Envio automatizado de códigos de clientes al BCP, quincenalmente.

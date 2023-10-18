@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+<title>Popular-Sistemas</title>
+<!--/*/ <th:block th:include="fragments/headerparcial2inc :: head"></th:block> /*/-->
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<!-- Navigation -->
+		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+		<div id="page-wrapper">
+			<br />
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="page-header">Generaci&oacute;n Env&iacute;o BCP</h2>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Informaci&oacute;n del reporte</h3>
+					</div>
+					<div class="panel-body">
+						<div class="col-lg-10">
+							<div class="row">
+								<form id="frmGenerarArchivo">
+									<div class="form-group">
+										<div class="col-lg-2">
+											<label class="control-label" for="">Inversionista</label>
+										</div>
+										<div class="col-lg-10">
+											<select id="cboFondo" class="form-control required"
+												name="cboFondo" required="required"
+												title="Seleccione Fondo"></select>
+										</div>
+									</div>
+								</form>
+
+							</div>
+							<div class="row">
+								<form>
+									<div class="form-group">
+										<div class="col-lg-2">
+											<div class="col-lg-12"></div>
+											<div class="col-lg-12"></div>
+											<label for="">E-Mail destinarios a notificar</label>
+										</div>
+										<div class="col-lg-10">
+											<input type="text" class="form-control" id="txtEmail"
+												disabled="disabled" value=""
+												placeholder="destinatario1@empresa.com;destinatario2@empresa2.com;destinatario3@empresa3.com;" />
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<button type="button" id="btnEnviarReporte"
+								class="btn btn-primary col-lg-12">Generar Archivo
+								Teletransfer</button>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+
+
+
+		</div>
+		<!-- /#page-wrapper -->
+	</div>
+	<!-- /#wrapper -->
+
+	<!--/*/ <th:block th:include="fragments/footerparcial2inc :: footer"></th:block> /*/-->
+	<!-- SCRIPT PERSONALIZADO -->
+	<script
+		src="../../static/recursos/js/modulos/teletransfer/consultaValidacionRegistroCobroSAFI.js"
+		th:src="@{../recursos/js/modulos/teletransfer/consultaValidacionRegistroCobroSAFI.js}"></script>
+</body>
+
+</html>
